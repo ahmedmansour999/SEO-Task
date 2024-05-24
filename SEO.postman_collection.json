@@ -1,0 +1,429 @@
+{
+	"info": {
+		"_postman_id": "9330d2b5-5fa5-4d07-afd6-698f7f2b0051",
+		"name": "SEO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32108029"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"admin\" , \r\n    \"email\" : \"admin@gmail.com\" ,\r\n    \"phone\" : \"01119710541\" , \r\n    \"is_admin\" : 1 ,\r\n    \"password\" : \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"ahmed\" , \r\n    \"email\" : \"admin@gmail.com\" ,\r\n    \"phone\" : \"0119710541\" , \r\n    \"identifier\" : \"01119710541\" ,\r\n\r\n    \"password\" : \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzE2NTEwMDE5LCJleHAiOjE3MTY1MTM2MTksIm5iZiI6MTcxNjUxMDAxOSwianRpIjoieGlyb0M0YzdmaFBJMEtBOCIsInN1YiI6IjM5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.NBTj2Y9arA8xp8hlaJFf6wbE9j4tw1vSYlZisKeGdhI"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "_**Log in**_\n\n- using (email or phone Number) and password\n    \n- Required (identifier - Password)\n    \n\n_**Register**_\n\n- require (name - email -phone - password )\n    \n- is admin = 0 default\n    \n- send verify sms to active account (using twilio )\n    \n\n_**Logout**_"
+		},
+		{
+			"name": "User Details",
+			"item": [
+				{
+					"name": "my profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzE2NDcwNDAzLCJleHAiOjE3MTY0NzQwMDMsIm5iZiI6MTcxNjQ3MDQwMywianRpIjoiSUpGeTVkVHlNaDBncVEzQiIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.6ECgSFNyldeqGtVeUsZsjeh82N9KrKpheolp949PqLg"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/profile",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ALLUSER",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzE2NDcwNDAzLCJleHAiOjE3MTY0NzQwMDMsIm5iZiI6MTcxNjQ3MDQwMywianRpIjoiSUpGeTVkVHlNaDBncVEzQiIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.6ECgSFNyldeqGtVeUsZsjeh82N9KrKpheolp949PqLg"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/allUser",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"allUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "one User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzE2NDcwNDAzLCJleHAiOjE3MTY0NzQwMDMsIm5iZiI6MTcxNjQ3MDQwMywianRpIjoiSUpGeTVkVHlNaDBncVEzQiIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.6ECgSFNyldeqGtVeUsZsjeh82N9KrKpheolp949PqLg"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/oneUser/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"oneUser",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzE2NDcwNDAzLCJleHAiOjE3MTY0NzQwMDMsIm5iZiI6MTcxNjQ3MDQwMywianRpIjoiSUpGeTVkVHlNaDBncVEzQiIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.6ECgSFNyldeqGtVeUsZsjeh82N9KrKpheolp949PqLg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": 1,\r\n        \"name\": \"test22\",\r\n        \"phone\": \"01199710541\",\r\n        \"email\": \"test@gmail.com\",\r\n        \"password\" : \"123456\" ,\r\n        \"is_admin\": 1\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/updateUser",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"updateUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzE2NDYzNTg1LCJleHAiOjE3MTY0NjcxODUsIm5iZiI6MTcxNjQ2MzU4NSwianRpIjoiYVhlUE95VDdPbmZPVnVPZCIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.c0JhIbnbKmD8WswKxc4OMMZgcYVLRhzqLdIFX_CP3SQ"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/deleteUser/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"deleteUser",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "_**my profile (required admin token )**_\n\n- get auth user data\n    \n\n_**User (required user token)**_\n\n- get all user\n    \n- get one user\n    \n- update user\n    \n- delete user"
+		},
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "allposts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzE2NDgwMzMxLCJleHAiOjE3MTY0ODM5MzEsIm5iZiI6MTcxNjQ4MDMzMSwianRpIjoiajh2N2p1M2NBZFJUdVVqSiIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.AaJOhSgGjpJQ4JJu7J7P-dXKz_l0rhBfYqxXKM4yVak"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/posts",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "onePost",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzE2NDgwMzMxLCJleHAiOjE3MTY0ODM5MzEsIm5iZiI6MTcxNjQ4MDMzMSwianRpIjoiajh2N2p1M2NBZFJUdVVqSiIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.AaJOhSgGjpJQ4JJu7J7P-dXKz_l0rhBfYqxXKM4yVak"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/onePost/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"onePost",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzE2NDgwMzMxLCJleHAiOjE3MTY0ODM5MzEsIm5iZiI6MTcxNjQ4MDMzMSwianRpIjoiajh2N2p1M2NBZFJUdVVqSiIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.AaJOhSgGjpJQ4JJu7J7P-dXKz_l0rhBfYqxXKM4yVak"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"first post\" ,\r\n    \"description\" : \"test test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/createPost",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"createPost"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzE2NDc0NzA0LCJleHAiOjE3MTY0NzgzMDQsIm5iZiI6MTcxNjQ3NDcwNCwianRpIjoiQzNxN3RUaE9qYTVpbVk0RCIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.5hMOsjtukZyvV4KeGxJOhtQ2vVlNPBJ8S2wE-Z81A1A"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 2 ,\r\n    \"title\" : \"update post\" ,\r\n    \"description\" : \"test test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/updatePost",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"updatePost"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/deletePost/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"deletePost",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "_**Post ( require Token )**_\n\n- get All posts\n    \n- get one post\n    \n- create post\n    \n- update post\n    \n- delete post\n    \n\n> _command to send daily report for new user and new post_  \n`php artisan daily:report`"
+		}
+	]
+}
